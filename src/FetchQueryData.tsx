@@ -27,7 +27,7 @@ const FetchQueryData: FC = () => {
 		<div>
 			<div
 				style={{
-					background: '#dedede',
+					background: 'green',
 					marginBottom: '1rem',
 					padding: '0.875rem',
 				}}

@@ -31,7 +31,7 @@ const FetchData: FC = () => {
 		<div>
 			<div
 				style={{
-					background: '#dedede',
+					background: 'red',
 					marginBottom: '1rem',
 					padding: '0.875rem',
 				}}
