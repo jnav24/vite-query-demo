@@ -1,45 +1,36 @@
-import React, { useState } from 'react'
-import logo from './logo.svg'
-import './App.css'
+import React from 'react';
+// @ts-ignore
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+
+import FetchData from './FetchData';
+import FetchQueryData from './FetchQueryData';
+import Home from './Home';
 
 function App() {
-  const [count, setCount] = useState(0)
-
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Hello Vite + React!</p>
-        <p>
-          <button onClick={() => setCount((count) => count + 1)}>
-            count is: {count}
-          </button>
-        </p>
-        <p>
-          Edit <code>App.tsx</code> and save to test HMR updates.
-        </p>
-        <p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-          {' | '}
-          <a
-            className="App-link"
-            href="https://vitejs.dev/guide/features.html"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Vite Docs
-          </a>
-        </p>
-      </header>
-    </div>
-  )
+	return (
+		<Router>
+			<div>
+				<nav>
+					<ul>
+						<li>
+							<Link to="/">Home</Link>
+						</li>
+						<li>
+							<Link to="/fetch-data">Fetch Data</Link>
+						</li>
+						<li>
+							<Link to="/fetch-query-data">Fetch Query Data</Link>
+						</li>
+					</ul>
+				</nav>
+			</div>
+			<Switch>
+				<Route exact path="/" component={Home} />
+				<Route exact path="/fetch-data" component={FetchData} />
+				<Route exact path="/fetch-query-data" component={FetchQueryData} />
+			</Switch>
+		</Router>
+	);
 }
 
-export default App
+export default App;
